@@ -47,6 +47,7 @@
 		AE80F693235AC39A00C79557 /* come-in-pillow_iosUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "come-in-pillow_iosUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		AE80F697235AC39A00C79557 /* come_in_pillow_iosUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = come_in_pillow_iosUITests.swift; sourceTree = "<group>"; };
 		AE80F699235AC39A00C79557 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		AE80F6A5235AC47600C79557 /* come-in-pillow_ios.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "come-in-pillow_ios.entitlements"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,6 +98,7 @@
 		AE80F676235AC39600C79557 /* come-in-pillow_ios */ = {
 			isa = PBXGroup;
 			children = (
+				AE80F6A5235AC47600C79557 /* come-in-pillow_ios.entitlements */,
 				AE80F677235AC39700C79557 /* AppDelegate.swift */,
 				AE80F679235AC39700C79557 /* ViewController.swift */,
 				AE80F67B235AC39700C79557 /* Main.storyboard */,
@@ -193,6 +195,11 @@
 				TargetAttributes = {
 					AE80F673235AC39600C79557 = {
 						CreatedOnToolsVersion = 10.1;
+						SystemCapabilities = {
+							com.apple.Push = {
+								enabled = 1;
+							};
+						};
 					};
 					AE80F687235AC39900C79557 = {
 						CreatedOnToolsVersion = 10.1;
@@ -432,14 +439,18 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_ENTITLEMENTS = "come-in-pillow_ios/come-in-pillow_ios.entitlements";
+				CODE_SIGN_IDENTITY = "Apple Development: Yuuma Sakata (SM5S5L6NY5)";
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = FUYNSQ2NQ6;
 				INFOPLIST_FILE = "come-in-pillow_ios/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "clanguage.come-in-pillow-ios";
+				PRODUCT_BUNDLE_IDENTIFIER = "tmy.jack.come-in-pillow";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "Come in Pillow";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -449,14 +460,18 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_ENTITLEMENTS = "come-in-pillow_ios/come-in-pillow_ios.entitlements";
+				CODE_SIGN_IDENTITY = "Apple Development: Yuuma Sakata (SM5S5L6NY5)";
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = FUYNSQ2NQ6;
 				INFOPLIST_FILE = "come-in-pillow_ios/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "clanguage.come-in-pillow-ios";
+				PRODUCT_BUNDLE_IDENTIFIER = "tmy.jack.come-in-pillow";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "Come in Pillow";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -474,7 +489,7 @@
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "clanguage.come-in-pillow-iosTests";
+				PRODUCT_BUNDLE_IDENTIFIER = "tmy.jack.come-in-pillow";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -494,7 +509,7 @@
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "clanguage.come-in-pillow-iosTests";
+				PRODUCT_BUNDLE_IDENTIFIER = "tmy.jack.come-in-pillow";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -513,7 +528,7 @@
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "clanguage.come-in-pillow-iosUITests";
+				PRODUCT_BUNDLE_IDENTIFIER = "tmy.jack.come-in-pillow";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -532,7 +547,7 @@
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "clanguage.come-in-pillow-iosUITests";
+				PRODUCT_BUNDLE_IDENTIFIER = "tmy.jack.come-in-pillow";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
