@@ -3,15 +3,13 @@ import time
 import json
 
 def send(ard):
-    time.sleep(2)
     ard.write(b'1')
 
 def receive(ard):
-    time.sleep(2)
     str = ard.read(1)
     print(str)
     return int(str.decode())
-
+    
 if __name__ == '__main__':
     f = open("reference.json",'r')
     ref = json.load(f)
