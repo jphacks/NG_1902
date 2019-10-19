@@ -6,15 +6,16 @@ def send(ard):
     time.sleep(2)
     ard.write(b'1')
 
-def reseive(ard):
+def receive(ard):
     time.sleep(2)
     str = ard.read(1)
     print(str)
-    return int(str)
+    return int(str.decode())
 
 if __name__ == '__main__':
     f = open("reference.json",'r')
     ref = json.load(f)
+    f.close()
     ard=serial.Serial('/dev/ttyUSB0',9600)
     t=0
     
@@ -22,7 +23,7 @@ if __name__ == '__main__':
         time.sleep(2)
         onhead=receive(ard)
         t=0
-        if onhead==b'1':
+        if onhead==1:
             if t==0:
                 t=ref["waittime"]
                 print("reset")
