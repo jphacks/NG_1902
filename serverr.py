@@ -18,4 +18,4 @@ def index():
     os.chdir('../')
     return render_template("index.html",mins=mins)
 
-app.run()
+app.run(host='0.0.0.0')

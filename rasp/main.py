@@ -9,7 +9,7 @@ def notsleep(ard,ref):
     if receive(ard)==0:
         return {"state":0,"t":0}
     else:
-        sched=getsched(ref["token"])
+        #sched=getsched(ref["token"])
         t=ref["waittime"]
         '''
         if sched=="nothing":
@@ -28,7 +28,7 @@ def sleeping(ard,ref,t):
             return {"state":1,"t":t-1}
         else:
             send(ard)
-            sendpush(ref["uid"],ref["token"])
+            #sendpush(ref["uid"],ref["token"])
             return {"state":2,"t":0}
 
 def ring(ard):
