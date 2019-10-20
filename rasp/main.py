@@ -9,9 +9,13 @@ def notsleep(ard,ref):
     if receive(ard)==0:
         return {"state":0,"t":0}
     else:
-        sched=datetime.strptime(getsched(ref["token"]),'%Y%m%d%H%M')
-        gr=int((datetime.now()-sched).total_seconds()/60)
-        t=ref["waittime"] if gr < ref["waittime"] else gr
+        sched=getsched(ref["token"])
+        if sched=="nothing":
+            t=ref["waittime"]
+        else:
+            sched=datetime.strptime(sched,'%Y%m%d%H%M')
+            gr=int((sched-datetime.now()).total_seconds()/60-ref["getuptime"])
+            t=ref["waittime"] if gr > ref["waittime"] else gr
         return {"state":1,"t":t}
 
 def sleeping(ard,ref,t):
