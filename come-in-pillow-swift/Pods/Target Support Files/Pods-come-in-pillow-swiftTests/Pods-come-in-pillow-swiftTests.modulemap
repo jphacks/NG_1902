@@ -1,0 +1,6 @@
+framework module Pods_come_in_pillow_swiftTests {
+  umbrella header "Pods-come-in-pillow-swiftTests-umbrella.h"
+
+  export *
+  module * { export * }
+}

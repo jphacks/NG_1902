@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>1058894709469-cnbvap1376ipe77jelbv81f8mknac2tr.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.1058894709469-cnbvap1376ipe77jelbv81f8mknac2tr</string>
+	<key>API_KEY</key>
+	<string>AIzaSyAsj3TslCmyMkadprlcoHRPNsKvxE1Yxsk</string>
+	<key>GCM_SENDER_ID</key>
+	<string>1058894709469</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>tmy.jack.come-in-pillow</string>
+	<key>PROJECT_ID</key>
+	<string>come-in-pillow</string>
+	<key>STORAGE_BUCKET</key>
+	<string>come-in-pillow.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:1058894709469:ios:ed92c5ad91eed0ce16d134</string>
+	<key>DATABASE_URL</key>
+	<string>https://come-in-pillow.firebaseio.com</string>
+</dict>
+</plist>

@@ -1,0 +1,5 @@
+#import <Foundation/Foundation.h>
+@interface PodsDummy_Pods_come_in_pillow_swift_come_in_pillow_swiftUITests : NSObject
+@end
+@implementation PodsDummy_Pods_come_in_pillow_swift_come_in_pillow_swiftUITests
+@end
