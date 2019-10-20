@@ -16,7 +16,7 @@ def notsleep(ard,ref):
             sched=datetime.strptime(sched,'%Y%m%d%H%M')
             gr=int((sched-datetime.now()).total_seconds()/60-ref["getuptime"])
             t=ref["waittime"] if gr > ref["waittime"] else gr
-        return {"state":1,"t":t}
+        return {"state":1,"t":t*30}
 
 def sleeping(ard,ref,t):
     if receive(ard)==0:
