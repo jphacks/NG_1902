@@ -1,4 +1,4 @@
-int r, headCheck = 0,interval = 1000, timer, del = 100,altimer,dif;
+int r, headCheck = 0,interval = 1000, timer, del = 100,altimer,dif = 900;
 byte bt;
 bool head, wakeUp, remain = 500;
 float herz[]={698.4,783};
@@ -8,15 +8,17 @@ void setup() {
   // put your setup code here, to run once:
   pinMode(9,OUTPUT);
   pinMode(8,OUTPUT);
-  pinMode(10,OUTPUT);
-  //pinMode(11,INPUT);
   Serial.begin(9600);
 }
 
 void loop() {
-  
-digitalWrite(8,HIGH);
-digitalWrite(10,HIGH);
+
+for(int i=1;i < 10; i++){
+  tone(9,i * 100);
+    delay(100);
+  }
+  noTone(9);
+/*digitalWrite(8,HIGH);
 delay(500);
 //dif = analogRead(1) - analogRead(0);
 for(int i=1;i < 10; i++){
@@ -30,15 +32,15 @@ for(int i=1;i < 10; i++){
   dif *= 0.8;
   Serial.println(dif);
 
-
+*/
   A:
   digitalWrite(8,HIGH);
   headCheck = 0;
   timer = 20000;
   altimer = 0;
 while(!head){
-  r = analogRead(1) - analogRead(0);
-  if(r > dif * 1.2){
+  r = analogRead(0);
+  if(r > dif){
       headCheck += 100;
       head = headCheck > interval;
   }else if(headCheck > 10){
@@ -46,8 +48,8 @@ while(!head){
     }
     delay(del);
 //    Serial.println(char(r));
-Serial.println(r);
-//Serial.print(head);
+//Serial.println(r);
+Serial.print(head);
 }
 for (int i=1; i<3;i++){
   tone(9,2000);
@@ -59,11 +61,11 @@ for (int i=1; i<3;i++){
 
   //-----------------------------------------------寝てるぜ
  X:
-  timer -= del;
-  r = analogRead(1) - analogRead(0);
+  //timer -= del;
+  r = analogRead(0);
   bt = Serial.read() - 48;
   if (bt == 1) timer = -1;
-  if(r > dif * 1.5 && headCheck < 1000){
+  if(r > dif && headCheck < 1000){
       headCheck += 100;
       head = headCheck > interval;
   }else if(headCheck > 3){
@@ -84,7 +86,7 @@ for (int i=1; i<3;i++){
   //if (!head) goto Z;
   */
   Y: 
-
+  
   while(head){
 /*
     tone(9,herz[1]);
@@ -99,8 +101,8 @@ for (int i=1; i<3;i++){
     potato(altimer);
     delay(50);
     altimer = (altimer + 50) % 1000;
-    r = analogRead(1) - analogRead(0);
-    if(r > dif * 1.5 && headCheck < 1000){
+    r = analogRead(0);
+    if(r > dif && headCheck < 1000){
       headCheck += 100;
       head = headCheck > interval;
   }else if(headCheck > 50){
