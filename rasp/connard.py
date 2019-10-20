@@ -6,9 +6,9 @@ def send(ard):
     ard.write(b'1')
 
 def receive(ard):
-    str = ard.read(1)
-    print(str)
-    return int(str.decode())
+    onhead = ard.read(1)
+    print(onhead)
+    return int(onhead.decode())
     
 if __name__ == '__main__':
     f = open("reference.json",'r')
@@ -16,7 +16,6 @@ if __name__ == '__main__':
     f.close()
     ard=serial.Serial('/dev/ttyUSB0',9600)
     t=0
-    
     while 1:
         time.sleep(2)
         onhead=receive(ard)
