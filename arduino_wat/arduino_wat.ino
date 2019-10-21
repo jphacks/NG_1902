@@ -1,6 +1,7 @@
-int r, headCheck = 0,interval = 1000, timer, del = 100;
+int r, headCheck = 0,interval = 1000, timer, del = 100,altimer;
 byte bt;
-bool head, wakeUp;
+bool head, wakeUp, remain = 500;
+float herz[]={698.4,783};
 
 //int score[][2]={{6,8},{5,8},{8,8},{9,4},{6,8},{8,8},{10,4},{11,8},{12,8},{13,4},{10,8},{}
 void setup() {
@@ -12,12 +13,21 @@ void setup() {
 }
 
 void loop() {
+
+
+
+
+
+
+
+  A:
   digitalWrite(8,HIGH);
   headCheck = 0;
   timer = 20000;
+  altimer = 0;
 while(!head){
   r = analogRead(1) - analogRead(0);
-  if(r > 4){
+  if(r > 100){
       headCheck += 100;
       head = headCheck > interval;
   }else if(headCheck > 10){
@@ -25,7 +35,7 @@ while(!head){
     }
     delay(del);
 //    Serial.println(char(r));
-Serial.println(head);
+Serial.println(r);
 }
 for (int i=1; i<3;i++){
   tone(9,2000);
@@ -41,7 +51,7 @@ for (int i=1; i<3;i++){
   r = analogRead(1) - analogRead(0);
   bt = Serial.read() - 48;
   if (bt == 1) timer = -1;
-  if(r > 4 && headCheck < 1000){
+  if(r > 100 && headCheck < 1000){
       headCheck += 100;
       head = headCheck > interval;
   }else if(headCheck > 3){
@@ -52,16 +62,43 @@ for (int i=1; i<3;i++){
   //Serial.println(headCheck);  
   Serial.println(head);
   if (timer < 0) goto Y;  
-  if (head) goto X; 
+  if (head) goto X; else goto Z; 
 
-    for (int i=1; i<3;i++){
+   /* for (int i=1; i<3;i++){
   tone(9,1000);
   delay(del);
   noTone(9);
   } 
   //if (!head) goto Z;
+  */
+  Y: 
+
+  while(head){
+/*
+    tone(9,herz[1]);
+    delay(250);
+    tone(9,herz[0]);
+    delay(250);
+    tone(9,herz[1]);
+    delay(250);
+    noTone(9);
+    delay(250);
+    */
+    potato(altimer);
+    delay(50);
+    altimer = (altimer + 50) % 1000;
+    r = analogRead(1) - analogRead(0);
+    if(r > 100 && headCheck < 1000){
+      headCheck += 100;
+      head = headCheck > interval;
+  }else if(headCheck > 50){
+     headCheck -= 50;
+    }
+    head = headCheck > 50;
+    }
+
   
-    Y:
+    Z:
   
   
     for (int i=1; i<3;i++){
@@ -72,14 +109,20 @@ for (int i=1; i<3;i++){
   head = false;
   
   // put your main code here, to run repeatedly:
-  
-//r = 1023 - analogRead(0);
 
-//Serial.println(r);
-//delay(500);
-//if((1023 - analogRead(0)) > 3){
-  
-//}else{
-
-  //noTone(9);
 }
+
+void potato(int altimer){
+  if(altimer < 250){
+    tone(9,herz[1]);
+    }else if(altimer < 500){
+      tone(9,herz[0]);
+      }else if(altimer < 750){
+   tone(9,herz[1]);
+        }else{
+          noTone(9);
+          }
+
+
+      goto A;
+  }

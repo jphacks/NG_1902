@@ -1,0 +1,7 @@
+[firebaseで予定とるときのURL]
+https://us-central1-come-in-pillow.cloudfunctions.net/getSchedule
+[一時的なtoken]
+1//0eu77X0wcThNfCgYIARAAGA4SNwF-L9Irl4HBYxi3Tl6-XSwsFhcChpB0gwsdBv_emUduNniuy5nV1cP7MW6wSf1FwkHeMw07BhQ
+
+[使用例]
+URL?token=TOKEN
