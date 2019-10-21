@@ -1,7 +1,7 @@
 ﻿# Come-in-まくら
 
 
-[![Product Name](image.png)](https://www.youtube.com/watch?v=G5rULR53uMk)
+[![Come-in-まくら](image4493.png)](https://youtu.be/p1k6nnbt97Y)
 
 
 ## 製品概要
@@ -72,6 +72,8 @@ Googleカレンダーと連携して、予定があった場合はその予定�
 
 #### フレームワーク・ライブラリ・モジュール
 * Python
+* flask
+* pySerial
 * Swift
 * Arduino IDE
 
@@ -79,15 +81,15 @@ Googleカレンダーと連携して、予定があった場合はその予定�
 #### デバイス
 * 枕
 * Arduino
-* 曲げセンサ
 * 押しボタン
-* スピーカー
+* 圧電スピーカー
 * Raspberry Pi
-* iPhone
+* (iPhone)
 
 
 ### 独自開発技術（Hack Dayで開発したもの）
 #### 2日間に開発した独自の機能・技術
 <!-- * 独自で開発したものの内容をこちらに記載してください
 * 特に力を入れた部分をファイルリンク、またはcommit_idを記載してください（任意） -->
-* 寝たことを検知・起こす部分をブレッドボード
+* 寝たことを検知・起こす部分をブレッドボードで配線しました。
+* ラズパイとarduinoを接続してラズパイ側に通信・処理を集中させるようにしました。
