@@ -1,6 +1,0 @@
-framework module Pods_come_in_pillow_ios_come_in_pillow_iosUITests {
-  umbrella header "Pods-come-in-pillow_ios-come-in-pillow_iosUITests-umbrella.h"
-
-  export *
-  module * { export * }
-}
